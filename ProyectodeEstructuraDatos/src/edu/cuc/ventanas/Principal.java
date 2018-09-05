@@ -6,8 +6,8 @@
 package edu.cuc.ventanas;
 
 
-import edu.cuc.metodos.Metodos;
-import edu.cuc.metodos.Cola;
+import edu.cuc.clases.Metodos;
+import edu.cuc.clases.Cola;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -94,7 +94,7 @@ public class Principal extends javax.swing.JFrame {
         lstNombresArchivos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jScrollPane2.setViewportView(lstNombresArchivos);
 
-        panelVentana.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 230, 250));
+        panelVentana.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 310, 250));
 
         getContentPane().add(panelVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 510));
 
@@ -111,7 +111,7 @@ public class Principal extends javax.swing.JFrame {
             public void run() {
                 while (iterador.hasNext()) {
                     String next = iterador.next();
-                    Metodos.iniciarSimulacion(next, impresiones, dialogo);
+                    Metodos.iniciarSimulacion(next, dialogo);
                     Metodos.actualizadorLista(lstNombresArchivos, impresiones);
                      try {
                     Thread.sleep(10000);

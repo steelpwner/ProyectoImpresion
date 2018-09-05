@@ -1,4 +1,4 @@
-package edu.cuc.metodos;
+package edu.cuc.clases;
 
 import java.util.Iterator;
 
