@@ -48,12 +48,14 @@ public class Metodos {
      * @param lista La lista que va a ser modificada con un DefaultListModel
      */
     public static void colaALista(Cola<String> cola, JList lista) {
+    int i=1; //Se inicia un contador en uno para ennumerar los archivos
     Iterator<String> iterador=cola.iterator(); //Se crea el iterador que servirá para recorrer la cola
     DefaultListModel<String> modeloLista = new DefaultListModel();  //Se crea el modelo que sirve para llenar la lista
         while (iterador.hasNext()) { //Se hará hasta que no hayan más elementos
             String next = iterador.next(); //Se va avanzando de elemento en elemento
             String nombreArchivo = sacarNombreArchivo(next); //Se obtiene el nombre del archivo de la cadena
-            modeloLista.addElement(nombreArchivo); //Se añade al modelo el nombre del archivo para mostrar en la ventana
+            modeloLista.addElement(i+". "+nombreArchivo); //Se añade al modelo el nombre del archivo para mostrar en la ventana junto a su ennumeración correspondiente
+            i++; //Se aumenta el contador para in ennumerando cada archivo
         }
         lista.setModel(modeloLista); //Ya teniendo el modelo lleno se pasa a la lista
     }
